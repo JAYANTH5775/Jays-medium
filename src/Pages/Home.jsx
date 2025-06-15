@@ -8,7 +8,7 @@ function Home() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-     console.log("articles: ", articles);
+     
     const fetchArticles = async () => {
       const snap = await getDocs(collection(db, "articles"));
       setArticles(snap.docs.map(doc => ({ id: doc.id, ...doc.data() })));

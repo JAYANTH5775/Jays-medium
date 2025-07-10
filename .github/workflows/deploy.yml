@@ -3,7 +3,8 @@ name: Build and Deploy to Vercel
 on:
   push:
     branches:
-      - main  # Trigger deployment on main branch push
+      - main
+  workflow_dispatch:  
 
 jobs:
   build_and_deploy:
@@ -28,4 +29,4 @@ jobs:
         run: npm install -g vercel
 
       - name: Deploy to Vercel
-        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm  
+        run: vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm

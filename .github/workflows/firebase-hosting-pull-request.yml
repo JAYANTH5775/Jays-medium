@@ -3,6 +3,8 @@
 
 name: Deploy to Firebase Hosting on PR
 on: pull_request
+
+workflow_dispatch:
 permissions:
   checks: write
   contents: read
